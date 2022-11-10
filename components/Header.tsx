@@ -1,3 +1,6 @@
+import { BellIcon, SearchIcon } from "@heroicons/react/outline";
+import Link from "next/link";
+
 function Header() {
   return (
     <header>
@@ -17,7 +20,19 @@ function Header() {
                 <li className="headerLink">My List</li>
             </ul>
         </div>
-        <div></div>
+
+        <div className="flex items-center space-x-4 text-sm font-light"> 
+          <SearchIcon className="hidden h-6 w-6 sm:inline stroke-white"/>
+          <p className="hidden lg:inline">Kids</p>
+          <BellIcon className="h-6 w-6 stroke-white"/>
+          <Link href={"/account"}>
+            <img
+              src="https://rb.gy/g1pwyx"
+              alt=""
+              className="cursor-pointer rounded"
+            />
+          </Link>
+        </div>
     </header>
   )
 }
